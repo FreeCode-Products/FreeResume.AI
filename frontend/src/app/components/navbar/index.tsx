@@ -1,17 +1,19 @@
-"use client"
-import React,{useState} from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
-import logo from "../../assests/Yellow and Green Modern Logo (1).jpg"
+import logo from "../../assests/Yellow and Green Modern Logo (1).jpg";
 import CustomButton from "../CustomButton";
-import Navbar from "./Navbar";
+import Navbar from "../navbar/Navbar";
+import { useRouter } from "next/navigation";
 const MasterNavbar = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const navigation = [
-      { name: "Product", href: "#adjfndfjnd" },
-      { name: "Features", href: "dffadfdfdfddadfd" },
-      { name: "Marketplace", href: "#" },
-      { name: "Company", href: "adfadfd" },
-    ];
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useRouter();
+  const navigation = [
+    { name: "Product", href: "#adjfndfjnd" },
+    { name: "Features", href: "dffadfdfdfddadfd" },
+    { name: "Marketplace", href: "#" },
+    { name: "Company", href: "adfadfd" },
+  ];
 
   return (
     <div>
@@ -26,7 +28,11 @@ const MasterNavbar = () => {
               <Image
                 alt=""
                 src={logo}
-                className="h-24 w-40 object-cover rounded-xl "
+                className="h-20 w-40 object-cover rounded-xl"
+                onClick={() => {
+                  router.push("/");
+                  console.log("sdovbsdkjvbd");
+                }}
               />
             </a>
           </div>

@@ -33,17 +33,17 @@ export function VersionSwitcher({
               size="lg"
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
-              <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                <GalleryVerticalEnd className="size-4" />
+              <div className="flex aspect-square size-8 items-center justify-center rounded-lg  bg-gray-200">
+                <GalleryVerticalEnd className="size-4" color="blue" />
               </div>
               <div className="flex flex-col gap-0.5 leading-none">
-                <span className="font-semibold">Documentation</span>
-                <span className="">v{selectedVersion}</span>
+                <span className="font-bold text-xl ">Resume Builder</span>
+                {/* <span className="">v{selectedVersion}</span> */}
               </div>
-              <ChevronsUpDown className="ml-auto" />
+              {/* <ChevronsUpDown className="ml-auto" /> */}
             </SidebarMenuButton>
           </DropdownMenuTrigger>
-          <DropdownMenuContent
+          {/* <DropdownMenuContent
             className="w-[--radix-dropdown-menu-trigger-width]"
             align="start"
           >
@@ -56,7 +56,7 @@ export function VersionSwitcher({
                 {version === selectedVersion && <Check className="ml-auto" />}
               </DropdownMenuItem>
             ))}
-          </DropdownMenuContent>
+          </DropdownMenuContent> */}
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>

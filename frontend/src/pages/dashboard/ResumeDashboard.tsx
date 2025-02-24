@@ -1,15 +1,20 @@
-"use client"
+"use client";
 
 import React from "react";
-import "../../app/globals.css"
+import "../../app/globals.css";
 import Page from "./page";
-import Navbar from "@/app/components/Navbar";
+import MasterNavbar from "../../app/components/Navbar/index";
+import Footer from "../../app/components/Footer";
 
 const ResumeDashboard = () => {
   return (
-   <div>
-    <Page/>
-   </div>
+    <div>
+      <MasterNavbar />
+      <div className="mt-20">
+        <Page />
+      </div>
+      <Footer/>
+    </div>
   );
 };
 

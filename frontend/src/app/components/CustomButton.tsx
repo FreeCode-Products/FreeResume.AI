@@ -21,7 +21,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   const customizecss ={
     master:"px-10 py-8 rounded-full bg-blue-800 font-bold text-xl hover:bg-blue-900",
     masterlight:"px-10 py-8 rounded-full text-black bg-yellow-200 font-bold text-xl hover:bg-yellow-400",
-    default:"bg-blue-800 px-6 py-6"
+    default:"bg-blue-800 px-6 py-5  "
   }
 
 

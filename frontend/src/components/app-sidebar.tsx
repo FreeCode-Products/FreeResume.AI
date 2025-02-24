@@ -1,7 +1,7 @@
-import * as React from "react"
+import * as React from "react";
 
-import { SearchForm } from "@/components/search-form"
-import { VersionSwitcher } from "@/components/version-switcher"
+import { SearchForm } from "@/components/search-form";
+import { VersionSwitcher } from "@/components/version-switcher";
 import {
   Sidebar,
   SidebarContent,
@@ -13,163 +13,98 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
+import {
+  Home,
+  Briefcase,
+  GraduationCap,
+  Star,
+  FileText,
+  ListChecks,
+  CheckCircle,
+  Settings,
+} from "lucide-react"; // Import relevant icons
 
-// This is sample data.
 const data = {
   versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
   navMain: [
     {
-      title: "Getting Started",
+      title: "Start",
       url: "#",
       items: [
         {
-          title: "Installation",
+          title: "Header",
           url: "#",
+          icon: Home, // Home icon for the start page
         },
         {
-          title: "Project Structure",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Building Your Application",
-      url: "#",
-      items: [
-        {
-          title: "Routing",
-          url: "#",
-        },
-        {
-          title: "Data Fetching",
+          title: "Experience",
           url: "#",
           isActive: true,
+          icon: Briefcase, // Briefcase icon for work experience
         },
         {
-          title: "Rendering",
+          title: "Education",
           url: "#",
+          icon: GraduationCap, // Graduation cap for education section
         },
         {
-          title: "Caching",
+          title: "Skills",
           url: "#",
+          icon: Star, // Star icon to represent skills
         },
         {
-          title: "Styling",
+          title: "Summary",
           url: "#",
+          icon: FileText, // FileText icon for summary/document content
         },
         {
-          title: "Optimizing",
+          title: "Additional Details",
           url: "#",
+          icon: ListChecks, // ListChecks for extra details
         },
         {
-          title: "Configuring",
+          title: "Finalize",
           url: "#",
+          icon: CheckCircle, // CheckCircle to indicate finalization
         },
         {
-          title: "Testing",
+          title: "Settings",
           url: "#",
-        },
-        {
-          title: "Authentication",
-          url: "#",
-        },
-        {
-          title: "Deploying",
-          url: "#",
-        },
-        {
-          title: "Upgrading",
-          url: "#",
-        },
-        {
-          title: "Examples",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "API Reference",
-      url: "#",
-      items: [
-        {
-          title: "Components",
-          url: "#",
-        },
-        {
-          title: "File Conventions",
-          url: "#",
-        },
-        {
-          title: "Functions",
-          url: "#",
-        },
-        {
-          title: "next.config.js Options",
-          url: "#",
-        },
-        {
-          title: "CLI",
-          url: "#",
-        },
-        {
-          title: "Edge Runtime",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Architecture",
-      url: "#",
-      items: [
-        {
-          title: "Accessibility",
-          url: "#",
-        },
-        {
-          title: "Fast Refresh",
-          url: "#",
-        },
-        {
-          title: "Next.js Compiler",
-          url: "#",
-        },
-        {
-          title: "Supported Browsers",
-          url: "#",
-        },
-        {
-          title: "Turbopack",
-          url: "#",
+          icon: Settings, // Settings icon for configuration
         },
       ],
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props} variant="inset" collapsible="icon">
+    <Sidebar {...props} variant="inset" collapsible="icon" className="mt-20 absolute ">
       <SidebarHeader>
         <VersionSwitcher
           versions={data.versions}
           defaultVersion={data.versions[0]}
         />
-        
         {/* <SearchForm /> */}
       </SidebarHeader>
       <SidebarContent>
         {/* We create a SidebarGroup for each parent. */}
         {data.navMain.map((item) => (
           <SidebarGroup key={item.title}>
-            <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
+            {/* <SidebarGroupLabel>{item.title}</SidebarGroupLabel> */}
             <SidebarGroupContent>
               <SidebarMenu>
                 {item.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={item.isActive}>
-                      <a href={item.url}>{item.title}</a>
-                    </SidebarMenuButton>
+                    <div className="flex items-center">
+                      <p className="text-xl font-extrabold ml-2 mr-4 py-5 cursor-pointer">
+                        <item.icon />
+                      </p>
+                      <SidebarMenuButton asChild isActive={item.isActive}>
+                        <a href={item.url}>{item.title}</a>
+                      </SidebarMenuButton>
+                    </div>
                   </SidebarMenuItem>
                 ))}
               </SidebarMenu>
@@ -179,5 +114,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }
