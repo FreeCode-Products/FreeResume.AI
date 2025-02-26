@@ -4,7 +4,7 @@ import logo from "../assests/Yellow and Green Modern Logo (1).jpg";
 
 export default function Footer() {
   return (
-    <footer className="p-4 sm:p-6 bg-gray-800">
+    <footer className="p-4 sm:p-6  mt-10">
       <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             {footerLinks.map((section) => (
               <div key={section.title}>
-                <h2 className="mb-6 text-sm font-semibold  uppercase  text-white">
+                <h2 className="mb-6 text-sm font-semibold  uppercase  text-black">
                   {section.title}
                 </h2>
                 <ul className="  text-gray-400">

@@ -26,7 +26,7 @@ export default function HomePage() {
     <div className="bg-white">
       <MasterNavbar />
      
-      <div className="flex justify-between space-x-4 mt-40 mx-40 hover:bg-gray-100 cursor-pointer transition-all duration-100">
+      {/* <div className="flex justify-between space-x-4 mt-40 mx-40 hover:bg-gray-100 cursor-pointer transition-all duration-100">
         <div className="space-y-1">
           <h4 className="text-sm font-semibold">@nextjs</h4>
           <p className="text-sm">
@@ -39,9 +39,9 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="p-20">
-      <ResumeBuilder/>
-      </div>
+      <div className="p-20"> */}
+      {/* <ResumeBuilder/> */}
+      {/* </div> */}
 
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div

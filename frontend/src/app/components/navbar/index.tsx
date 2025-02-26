@@ -15,6 +15,11 @@ const MasterNavbar = () => {
     { name: "Company", href: "adfadfd" },
   ];
 
+  const handleAuthentication = () => {
+    router.push("/auth/GoogleAuth")
+
+  }
+
   return (
     <div>
       <header className="absolute inset-x-0 top-0 z-50">
@@ -52,7 +57,7 @@ const MasterNavbar = () => {
             <Navbar navigation={navigation} /> */}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <CustomButton name="Get Started" containerClass="default" />
+            <CustomButton name="Get Started" containerClass="default" onClick={handleAuthentication} />
           </div>
         </nav>
         {/* <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
