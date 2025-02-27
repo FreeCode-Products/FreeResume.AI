@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../app/assests/Yellow and Green Modern Logo (1).jpg";
 import Image from "next/image";
 import CustomButton from "../app/components/CustomButton";
@@ -11,21 +11,20 @@ import TemplateScetion from "../app/components/section/TemplateSection";
 import TemplateSection from "../app/components/section/TemplateSection";
 import StepsSection from "../app/components/section/StepsSection";
 import Footer from "../app/components/Footer";
-import MasterNavbar from "../app/components/Navbar/index";
 import ResumeBuilder from "./ResumeBuilder";
 
 export default function HomePage() {
   const router = useRouter();
 
+  
+
   const handleResumeDashboard = () => {
-    console.log("sdvjsndvojn");
     router.push("/dashboard/ResumeDashboard");
   };
 
   return (
     <div className="bg-white">
-      <MasterNavbar />
-     
+
       {/* <div className="flex justify-between space-x-4 mt-40 mx-40 hover:bg-gray-100 cursor-pointer transition-all duration-100">
         <div className="space-y-1">
           <h4 className="text-sm font-semibold">@nextjs</h4>

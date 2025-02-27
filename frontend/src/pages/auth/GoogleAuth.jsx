@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import UseAuth from '../../app/hooks/useAuth'
+import UseAuth from '../hooks/useAuth'
 import Public from "../../app/components/Public"
 import Protected from "../../app/components/Protected";
 import Page from '../dashboard/page';
