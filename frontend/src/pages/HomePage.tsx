@@ -11,12 +11,10 @@ import TemplateScetion from "../app/components/section/TemplateSection";
 import TemplateSection from "../app/components/section/TemplateSection";
 import StepsSection from "../app/components/section/StepsSection";
 import Footer from "../app/components/Footer";
-import ResumeBuilder from "./ResumeBuilder";
+import ResumeBuilder from "./dashboard/ResumeBuilder";
 
 export default function HomePage() {
   const router = useRouter();
-
-  
 
   const handleResumeDashboard = () => {
     router.push("/dashboard/ResumeDashboard");
@@ -24,24 +22,6 @@ export default function HomePage() {
 
   return (
     <div className="bg-white">
-
-      {/* <div className="flex justify-between space-x-4 mt-40 mx-40 hover:bg-gray-100 cursor-pointer transition-all duration-100">
-        <div className="space-y-1">
-          <h4 className="text-sm font-semibold">@nextjs</h4>
-          <p className="text-sm">
-            The React Framework – created and maintained by @vercel.
-          </p>
-          <div className="flex items-center pt-2">
-            <span className="text-xs text-muted-foreground">
-              Joined December 2021
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="p-20"> */}
-      {/* <ResumeBuilder/> */}
-      {/* </div> */}
-
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           aria-hidden="true"
@@ -85,7 +65,6 @@ export default function HomePage() {
         <CTASection />
         <StepsSection />
       </div>
-      <Footer />
     </div>
   );
 }

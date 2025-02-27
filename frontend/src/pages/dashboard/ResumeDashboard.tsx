@@ -3,18 +3,16 @@
 import React from "react";
 import "../../app/globals.css";
 import Page from "./page";
-import MasterNavbar from "../../app/components/navbar/MasterNavbar";
 import Footer from "../../app/components/Footer";
+import MasterPage from "../master-template/MasterPage";
 
 const ResumeDashboard = () => {
   return (
-    <div>
-      <MasterNavbar />
+    <MasterPage>
       <div className="mt-20">
         <Page />
       </div>
-      <Footer/>
-    </div>
+    </MasterPage>
   );
 };
 

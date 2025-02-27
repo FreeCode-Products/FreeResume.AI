@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "../../assests/Yellow and Green Modern Logo (1).jpg";
 import CustomButton from "../CustomButton";
-import Navbar from "./Navbar";
 import { useRouter } from "next/navigation";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from "../../../components/ui/avatar";
+import { Navbar } from "./Navbar";
 
 interface NavbarPropType {
   userLoggedIn: boolean;
@@ -62,13 +62,14 @@ const MasterNavbar = ({ userLoggedIn }: NavbarPropType) => {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            <Navbar navigation={navigation} />
+            <Navbar/>
+            {/* <Navbar navigation={navigation} /> */}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             {userLoggedIn ? (
               <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
+                <AvatarFallback>Hi!</AvatarFallback>
               </Avatar>
             ) : (
               <CustomButton

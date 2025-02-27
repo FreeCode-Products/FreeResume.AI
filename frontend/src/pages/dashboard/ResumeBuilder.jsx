@@ -1,5 +1,5 @@
 import React from "react";
-import ResumeTemplate from "./dashboard/ResumeTemplate";
+import ResumeTemplate from "./ResumeTemplate";
 
 const ResumeBuilder = () => {
   return (
