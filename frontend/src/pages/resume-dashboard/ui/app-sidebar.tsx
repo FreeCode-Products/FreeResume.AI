@@ -24,6 +24,8 @@ import {
   CheckCircle,
   Settings,
 } from "lucide-react"; // Import relevant icons
+import { useState } from "react";
+import ResumeData from "@/store/ResumeStore";
 
 const data = {
   versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
@@ -35,64 +37,89 @@ const data = {
         {
           title: "Header",
           url: "#",
-          icon: Home, // Home icon for the start page
+          icon: Home,
+          isActive: true,
         },
         {
           title: "Experience",
           url: "#",
-          isActive: true,
-          icon: Briefcase, // Briefcase icon for work experience
+          isActive: false,
+          icon: Briefcase,
         },
         {
           title: "Education",
           url: "#",
-          icon: GraduationCap, // Graduation cap for education section
+          icon: GraduationCap,
+          isActive: false,
         },
         {
           title: "Skills",
           url: "#",
-          icon: Star, // Star icon to represent skills
+          icon: Star,
+          isActive: false,
         },
         {
           title: "Summary",
           url: "#",
-          icon: FileText, // FileText icon for summary/document content
+          icon: FileText,
+          isActive: false,
         },
         {
           title: "Additional Details",
           url: "#",
-          icon: ListChecks, // ListChecks for extra details
+          icon: ListChecks,
+          isActive: false,
         },
         {
           title: "Finalize",
           url: "#",
-          icon: CheckCircle, // CheckCircle to indicate finalization
+          icon: CheckCircle,
+          isActive: false,
         },
         {
           title: "Settings",
           url: "#",
-          icon: Settings, // Settings icon for configuration
+          icon: Settings,
+          isActive: false,
         },
       ],
     },
   ],
 };
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+interface AppSidebarProps
+  extends Omit<React.ComponentProps<typeof Sidebar>, "ref"> {
+  setGetSidebarTitle: (title: string ) => void ;
+}
+
+export function AppSidebar({ setGetSidebarTitle : {},  ...props }: AppSidebarProps) {
+
+
+  const [sidebarTitle, setSidebarTitle] = useState("");
+  const { setname } = ResumeData();
+  const handleSidebarContent = (e: any) => {
+    console.log(e.target.innerText);
+    setname(e.target.innerText);
+    setSidebarTitle(e.target.innerText);
+  };
+
+
   return (
-    <Sidebar {...props} variant="inset" collapsible="icon" className="mt-20 absolute ">
+    <Sidebar
+      {...props}
+      variant="inset"
+      collapsible="icon"
+      className="mt-20 absolute "
+    >
       <SidebarHeader>
         <VersionSwitcher
           versions={data.versions}
           defaultVersion={data.versions[0]}
         />
-        {/* <SearchForm /> */}
       </SidebarHeader>
       <SidebarContent>
-        {/* We create a SidebarGroup for each parent. */}
         {data.navMain.map((item) => (
           <SidebarGroup key={item.title}>
-            {/* <SidebarGroupLabel>{item.title}</SidebarGroupLabel> */}
             <SidebarGroupContent>
               <SidebarMenu>
                 {item.items.map((item) => (
@@ -102,7 +129,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         <item.icon />
                       </p>
                       <SidebarMenuButton asChild isActive={item.isActive}>
-                        <a href={item.url}>{item.title}</a>
+                        <a href={item.url} onClick={handleSidebarContent}>
+                          {item.title}
+                        </a>
                       </SidebarMenuButton>
                     </div>
                   </SidebarMenuItem>

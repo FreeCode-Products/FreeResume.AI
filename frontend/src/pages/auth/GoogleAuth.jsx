@@ -4,9 +4,9 @@ import React from 'react'
 import UseAuth from '../hooks/useAuth'
 import Public from "../../app/components/Public"
 import Protected from "../../app/components/Protected";
-import Page from '../dashboard/page';
+import Page from '../resume-dashboard/page';
 import "../../app/globals.css"
-import ResumeDashboard from '../dashboard/ResumeDashboard';
+import ResumeDashboard from '../resume-dashboard/ResumeDashboard';
 
 const GoogleAuth = () => {
 

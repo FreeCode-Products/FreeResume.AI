@@ -37,7 +37,7 @@ export function VersionSwitcher({
                 <GalleryVerticalEnd className="size-4" color="blue" />
               </div>
               <div className="flex flex-col gap-0.5 leading-none">
-                <span className="font-bold text-xl ">Resume Builder</span>
+                <span className="font-bold text-xl ">Resume Section</span>
                 {/* <span className="">v{selectedVersion}</span> */}
               </div>
               {/* <ChevronsUpDown className="ml-auto" /> */}

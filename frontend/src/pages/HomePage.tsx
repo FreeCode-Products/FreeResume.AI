@@ -11,13 +11,13 @@ import TemplateScetion from "../app/components/section/TemplateSection";
 import TemplateSection from "../app/components/section/TemplateSection";
 import StepsSection from "../app/components/section/StepsSection";
 import Footer from "../app/components/Footer";
-import ResumeBuilder from "./dashboard/ResumeBuilder";
+import ResumeBuilder from "./resume-dashboard/resume-templates/ResumeBuilder";
 
 export default function HomePage() {
   const router = useRouter();
 
   const handleResumeDashboard = () => {
-    router.push("/dashboard/ResumeDashboard");
+    router.push("/resume-dashboard/ResumeDashboard");
   };
 
   return (

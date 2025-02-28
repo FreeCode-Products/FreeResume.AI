@@ -1,4 +1,4 @@
-import { AppSidebar } from "@/components/app-sidebar"
+import { AppSidebar } from "@/pages/resume-dashboard/ui/app-sidebar"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -17,7 +17,9 @@ import {
 export default function Page() {
   return (
     <SidebarProvider>
-      <AppSidebar />
+      <AppSidebar setGetSidebarTitle={function (title: string): void {
+        throw new Error("Function not implemented.")
+      } } />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />
