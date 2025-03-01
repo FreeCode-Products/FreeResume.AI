@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const posts = [
@@ -15,7 +16,7 @@ const posts = [
         role: 'Co-Founder / CTO',
         href: '#',
         imageUrl:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          'https://images.unsplash.com/phot0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
       },
     },
     // More posts...
@@ -53,7 +54,7 @@ const posts = [
                   <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">{post.description}</p>
                 </div>
                 <div className="relative mt-8 flex items-center gap-x-4">
-                  <img alt="" src={post.author.imageUrl} className="size-10 rounded-full bg-gray-50" />
+                  <Image alt="" src="https://tailwindui.com/plus-assets/Image/logos/158x48/statamic-logo-gray-900.svg" className="size-10 rounded-full bg-gray-50" width={400} height={200} />
                   <div className="text-sm/6">
                     <p className="font-semibold text-gray-900">
                       <a href={post.author.href}>

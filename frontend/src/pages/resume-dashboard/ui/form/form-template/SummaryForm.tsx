@@ -9,11 +9,9 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
@@ -49,9 +47,7 @@ export function SummaryForm() {
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
-                  {/* <FormDescription>
-                  This is your public display name.
-                </FormDescription> */}
+                 
                 </FormItem>
               </div>
               {/* <div className="flex flex-col lg:flex-row justify-start items-center"> */}

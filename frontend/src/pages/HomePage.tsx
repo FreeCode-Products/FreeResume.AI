@@ -1,17 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import logo from "../app/assests/Yellow and Green Modern Logo (1).jpg";
-import Image from "next/image";
 import CustomButton from "../app/components/CustomButton";
 import MiniSection from "../app/components/section/MiniSection";
 import CTASection from "../app/components/section/CTASection";
-import TemplateScetion from "../app/components/section/TemplateSection";
 import TemplateSection from "../app/components/section/TemplateSection";
 import StepsSection from "../app/components/section/StepsSection";
-import Footer from "../app/components/Footer";
-import ResumeBuilder from "./resume-dashboard/resume-templates/ResumeBuilder";
 
 export default function HomePage() {
   const router = useRouter();

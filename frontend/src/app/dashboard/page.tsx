@@ -17,7 +17,7 @@ import {
 export default function Page() {
   return (
     <SidebarProvider>
-      <AppSidebar setGetSidebarTitle={function (title: string): void {
+      <AppSidebar setGetSidebarTitle={function (): void {
         throw new Error("Function not implemented.")
       } } />
       <SidebarInset>

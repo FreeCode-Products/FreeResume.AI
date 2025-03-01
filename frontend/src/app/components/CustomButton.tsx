@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react";
-import { MailOpen } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -14,7 +13,6 @@ interface CustomButtonProps {
 
 const CustomButton: React.FC<CustomButtonProps> = ({
   containerClass,
-  Icon,
   name,
   onClick
 }) => {

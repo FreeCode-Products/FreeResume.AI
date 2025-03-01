@@ -13,7 +13,6 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -40,7 +39,7 @@ export function ExperienceForm() {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === "Enter") {
       event.preventDefault() // Prevent default newline behavior
-      setText((prev : any) => prev + "\n• ") // Add a new bullet point
+      setText((prev : string) => prev + "\n• ") // Add a new bullet point
     }
   }
 
@@ -104,7 +103,7 @@ export function ExperienceForm() {
                     <FormDescription className="flex gap-2">
                       {/* <div className="flex gap-2"> */}
                         <Checkbox id="terms1" />
-                           <span className="w-20 text-xs text-nowrap">I'm currently working here</span>
+                           <span className="w-20 text-xs text-nowrap"> {"I'm currently working here"}</span>
                       {/* </div> */}
                     </FormDescription>
                   </FormItem>

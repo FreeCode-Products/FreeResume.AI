@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import Image from "next/image";
 import logo from "../../assests/Yellow and Green Modern Logo (1).jpg";
 import CustomButton from "../CustomButton";
@@ -16,16 +16,9 @@ interface NavbarPropType {
 }
 
 const MasterNavbar = ({ userLoggedIn }: NavbarPropType) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [userLogged, setUserLogged] = useState(false);
+  const [,setMobileMenuOpen] = useState(false);
   const router = useRouter();
 
-  const navigation = [
-    { name: "Product", href: "#adjfndfjnd" },
-    { name: "Features", href: "dffadfdfdfddadfd" },
-    { name: "Marketplace", href: "#" },
-    { name: "Company", href: "adfadfd" },
-  ];
 
   const handleAuthentication = () => {
     router.push("/auth/GoogleAuth");

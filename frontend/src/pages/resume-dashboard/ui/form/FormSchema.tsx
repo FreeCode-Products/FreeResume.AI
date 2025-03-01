@@ -1,7 +1,9 @@
-"use client"
+import React from 'react'
 
-import { z } from "zod"
+const FormSchema = () => {
+  return (
+    <div>FormSchema</div>
+  )
+}
 
-const formSchema = z.object({
-  username: z.string().min(2).max(50),
-})
+export default FormSchema

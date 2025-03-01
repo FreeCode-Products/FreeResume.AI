@@ -5,7 +5,7 @@ export const storeUserInSupabase = async (user: UserModel) => {
 
     console.log(user,"data in storeUserInSupabase")
   // Check if user already exists
-  const { data, error } = await supabase.from('users').select('*').eq('id', user.user_id).single();
+  const { data } = await supabase.from('users').select('*').eq('id', user.user_id).single();
 
   if (!data) {
     // Insert new user

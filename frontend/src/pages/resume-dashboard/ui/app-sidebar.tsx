@@ -1,13 +1,11 @@
 import * as React from "react";
 
-import { SearchForm } from "@/components/search-form";
 import { VersionSwitcher } from "@/components/version-switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -24,7 +22,6 @@ import {
   CheckCircle,
   Settings,
 } from "lucide-react"; // Import relevant icons
-import { useState } from "react";
 import ResumeData from "@/store/ResumeStore";
 
 const data = {
@@ -95,12 +92,21 @@ interface AppSidebarProps
 export function AppSidebar({ setGetSidebarTitle : {},  ...props }: AppSidebarProps) {
 
 
-  const [sidebarTitle, setSidebarTitle] = useState("");
   const { setname } = ResumeData();
-  const handleSidebarContent = (e: any) => {
-    console.log(e.target.innerText);
-    setname(e.target.innerText);
-    setSidebarTitle(e.target.innerText);
+  const handleSidebarContent = (e : React.MouseEvent<HTMLAnchorElement>) => {
+  //   const target = e.target as HTMLElement;
+  // console.log(target.innerText);
+  // setname(target.innerText);
+
+  // const target = e.target as HTMLElement;
+
+  // if (target instanceof HTMLElement) {
+  //   console.log(target.innerText);
+  //   setname(target.innerText);
+  // }
+
+  console.log(e.currentTarget.innerText);
+  setname(e.currentTarget.innerText);
   };
 
 

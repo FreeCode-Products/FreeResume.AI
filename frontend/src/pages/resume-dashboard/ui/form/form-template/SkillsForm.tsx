@@ -8,13 +8,10 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { useState } from "react";
 
 const formSchema = z.object({
@@ -39,7 +36,7 @@ export function SkillsForm() {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === "Enter") {
       event.preventDefault(); // Prevent default newline behavior
-      setText((prev: any) => prev + "\n• "); // Add a new bullet point
+      setText((prev: string) => prev + "\n• "); // Add a new bullet point
     }
   };
 
@@ -53,7 +50,7 @@ export function SkillsForm() {
         <FormField
           control={form.control}
           name="username"
-          render={({ field }) => (
+          render={({  }) => (
             <>
               <div className="flex flex-col lg:flex-row justify-around items-center">
                 <FormItem className="w-full py-0.5 lg:py-0">

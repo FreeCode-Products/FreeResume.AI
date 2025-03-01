@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function CTASection() {
@@ -45,7 +46,7 @@ export default function CTASection() {
             </div>
           </div>
           <div className="relative mt-16 h-80 lg:mt-8">
-            <img
+            <Image
               alt="App screenshot"
               src="https://tailwindui.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
               width={1824}
