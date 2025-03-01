@@ -603,18 +603,14 @@ export function CustomSection() {
                           <FormControl>
                             <Input placeholder="" {...field} />
                           </FormControl>
-                          {/* <FormDescription>
-                  This is your public display name.
-                </FormDescription> */}
+                     
                         </FormItem>
                         <FormItem className="w-72 py-0.5 lg:py-0">
                           <FormLabel>Email </FormLabel>
                           <FormControl>
                             <Input placeholder="" {...field} />
                           </FormControl>
-                          {/* <FormDescription>
-                  This is your public display name.
-                  </FormDescription> */}
+                         
                         </FormItem>
                       </div>
                     </>
