@@ -21,7 +21,7 @@ const formSchema = z.object({
   }),
 });
 
-export function SummaryForm() {
+const  SummaryForm =() => {
   const form = useForm({
     resolver: zodResolver(formSchema), // Validation with Zod
     defaultValues: {
@@ -81,3 +81,6 @@ export function SummaryForm() {
     </Form>
   );
 }
+
+
+export default SummaryForm

@@ -21,7 +21,7 @@ const formSchema = z.object({
   }),
 });
 
-export function EducationForm() {
+const EducationForm =() =>  {
   const form = useForm({
     resolver: zodResolver(formSchema), // Validation with Zod
     defaultValues: {
@@ -127,3 +127,5 @@ export function EducationForm() {
     </Form>
   );
 }
+
+export default EducationForm

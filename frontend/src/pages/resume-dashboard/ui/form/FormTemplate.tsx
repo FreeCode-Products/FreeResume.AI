@@ -22,7 +22,7 @@ const formSchema = z.object({
   }),
 });
 
-export function ProfileForm() {
+const ProfileForm = () =>  {
   const form = useForm({
     resolver: zodResolver(formSchema), // Validation with Zod
     defaultValues: {
@@ -58,3 +58,4 @@ export function ProfileForm() {
     </Form>
   );
 }
+export default ProfileForm

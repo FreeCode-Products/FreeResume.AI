@@ -89,7 +89,7 @@ interface AppSidebarProps
   setGetSidebarTitle: (title: string ) => void ;
 }
 
-export function AppSidebar({ setGetSidebarTitle : {},  ...props }: AppSidebarProps) {
+const AppSidebar =({ setGetSidebarTitle : {},  ...props }: AppSidebarProps) => {
 
 
   const { setname } = ResumeData();
@@ -151,3 +151,6 @@ export function AppSidebar({ setGetSidebarTitle : {},  ...props }: AppSidebarPro
     </Sidebar>
   );
 }
+
+
+export default AppSidebar

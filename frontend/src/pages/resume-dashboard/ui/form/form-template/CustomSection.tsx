@@ -26,7 +26,7 @@ const formSchema = z.object({
   }),
 });
 
-export function CustomSection() {
+const  CustomSection =() => {
   const form = useForm({
     resolver: zodResolver(formSchema), // Validation with Zod
     defaultValues: {
@@ -631,3 +631,5 @@ export function CustomSection() {
     </>
   );
 }
+
+export default CustomSection

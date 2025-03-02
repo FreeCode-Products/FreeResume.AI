@@ -23,7 +23,7 @@ const formSchema = z.object({
   }),
 });
 
-export function ExperienceForm() {
+const  ExperienceForm =() => {
   const form = useForm({
     resolver: zodResolver(formSchema), // Validation with Zod
     defaultValues: {
@@ -124,3 +124,5 @@ export function ExperienceForm() {
     </Form>
   );
 }
+
+export default ExperienceForm

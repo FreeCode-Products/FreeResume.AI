@@ -20,7 +20,7 @@ const formSchema = z.object({
   }),
 });
 
-export function HeaderForm() {
+const HeaderForm =() => {
   const form = useForm({
     resolver: zodResolver(formSchema), // Validation with Zod
     defaultValues: {
@@ -125,3 +125,5 @@ export function HeaderForm() {
     </Form>
   );
 }
+
+export default HeaderForm
