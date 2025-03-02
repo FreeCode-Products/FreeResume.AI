@@ -1,11 +1,11 @@
 import React from "react";
 import ResumeData from "@/store/ResumeStore";
-import  HeaderForm from "./form/form-template/HeaderForm";
-import  SummaryForm from "./form/form-template/SummaryForm";
-import  EducationForm from "./form/form-template/EducationForm";
-import  ExperienceForm from "./form/form-template/ExperienceForm";
-import  SkillsForm from "./form/form-template/SkillsForm";
-import  CustomSection from "./form/form-template/CustomSection";
+import  HeaderForm from "../../pages/resume-dashboard/ui/form/form-template/HeaderForm";
+import  SummaryForm from "../../pages/resume-dashboard/ui/form/form-template/SummaryForm";
+import  EducationForm from "../../pages/resume-dashboard/ui/form/form-template/EducationForm";
+import  ExperienceForm from "../../pages/resume-dashboard/ui/form/form-template/ExperienceForm";
+import  SkillsForm from "../../pages/resume-dashboard/ui/form/form-template/SkillsForm";
+import  CustomSection from "../../pages/resume-dashboard/ui/form/form-template/CustomSection";
 
 const formComponents: Record<string, React.FC> = {
   Header: HeaderForm,
