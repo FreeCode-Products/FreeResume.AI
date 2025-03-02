@@ -1,4 +1,4 @@
-import { AppSidebar } from "@/pages/resume-dashboard/ui/app-sidebar"
+import AppSidebar from "@/pages/resume-dashboard/ui/app-sidebar"
 import {
   Breadcrumb,
   BreadcrumbItem,
