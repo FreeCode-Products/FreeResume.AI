@@ -15,7 +15,7 @@ import {
 import { useState } from "react";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
+  Tech_Skills: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
 });
@@ -24,11 +24,11 @@ const  SkillsForm =() => {
   const form = useForm({
     resolver: zodResolver(formSchema), // Validation with Zod
     defaultValues: {
-      username: "",
+      Tech_Skills: "",
     },
   });
 
-  function onSubmit(values: { username: string }) {
+  function onSubmit(values: { Tech_Skills: string }) {
     console.log(values); // Handle form submission
   }
   const [text, setText] = useState("• "); // Start with a bullet
@@ -49,8 +49,8 @@ const  SkillsForm =() => {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
-          name="username"
-          render={({  }) => (
+          name="Tech_Skills"
+          render={({ field}) => (
             <>
               <div className="flex flex-col lg:flex-row justify-around items-center">
                 <FormItem className="w-full py-0.5 lg:py-0">
@@ -63,10 +63,11 @@ const  SkillsForm =() => {
                   <FormControl>
                     <Textarea
                       placeholder="Type your message here."
+                      {...field}
                       id="message-2"
                       className="h-40 w-full"
-                      value={text}
-                      onChange={handleChange}
+                      // value={text}
+                      // onChange={handleChange}
                       onKeyDown={handleKeyDown}
                     />
                   </FormControl>

@@ -35,7 +35,13 @@ const data = {
           title: "Header",
           url: "#",
           icon: Home,
-          isActive: true,
+          isActive: false,
+        },
+        {
+          title: "Summary",
+          url: "#",
+          icon: FileText,
+          isActive: false,
         },
         {
           title: "Experience",
@@ -55,12 +61,7 @@ const data = {
           icon: Star,
           isActive: false,
         },
-        {
-          title: "Summary",
-          url: "#",
-          icon: FileText,
-          isActive: false,
-        },
+       
         {
           title: "Additional Details",
           url: "#",
@@ -91,26 +92,36 @@ interface AppSidebarProps
 
 const AppSidebar =({ setGetSidebarTitle : {},  ...props }: AppSidebarProps) => {
 
-
   const { setname } = ResumeData();
-  const handleSidebarContent = (e : React.MouseEvent<HTMLAnchorElement>) => {
-  //   const target = e.target as HTMLElement;
+  const handleSidebarContent = (e : React.MouseEvent<HTMLDivElement>) => {
+
+
+  //const target = e.target as HTMLElement;
   // console.log(target.innerText);
   // setname(target.innerText);
-
   // const target = e.target as HTMLElement;
-
   // if (target instanceof HTMLElement) {
   //   console.log(target.innerText);
   //   setname(target.innerText);
   // }
 
-  console.log(e.currentTarget.innerText);
+
+  console.log(e.currentTarget.innerText,"app_sidebar");
+
+    data.navMain[0].items.map((item) => {
+      if(item.title == e.currentTarget.innerText){
+        item.isActive = true
+      } else{
+        item.isActive = false
+      }
+    })
   setname(e.currentTarget.innerText);
+
   };
 
 
   return (
+
     <Sidebar
       {...props}
       variant="inset"
@@ -129,17 +140,17 @@ const AppSidebar =({ setGetSidebarTitle : {},  ...props }: AppSidebarProps) => {
             <SidebarGroupContent>
               <SidebarMenu>
                 {item.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <div className="flex items-center">
+                  <SidebarMenuItem key={item.title} className="cursor-pointer py-2 ">
+                      <SidebarMenuButton asChild isActive={item.isActive == true && item.isActive} className=" h-14 " >
+                    <div className="flex items-center " onClick={handleSidebarContent}>
                       <p className="text-xl font-extrabold ml-2 mr-4 py-5 cursor-pointer">
                         <item.icon />
                       </p>
-                      <SidebarMenuButton asChild isActive={item.isActive}>
-                        <a href={item.url} onClick={handleSidebarContent}>
+                        <a href={item.url} className="font-semibold text-lg" >
                           {item.title}
                         </a>
-                      </SidebarMenuButton>
                     </div>
+                      </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
               </SidebarMenu>
@@ -149,6 +160,7 @@ const AppSidebar =({ setGetSidebarTitle : {},  ...props }: AppSidebarProps) => {
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
+
   );
 }
 
