@@ -177,7 +177,7 @@ const EducationForm = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row justify-around items-center">
+        <div className="flex flex-c-ol lg:flex-row justify-around items-center">
           <FormField
             control={form.control}
             name="Score"
@@ -188,7 +188,6 @@ const EducationForm = () => {
                   <Input placeholder="" {...field} />
                  </FormControl>
                 <FormMessage />
-               
               </FormItem>
             )}
           />
@@ -201,7 +200,7 @@ const EducationForm = () => {
             Submit
           </Button>
         </div>
-      </form>
+      </form> 
     </Form>
   );
 };

@@ -40,12 +40,12 @@ export default function Banner() {
           Get hired faster with an AI-powered resume review
         </p>
       </div>
-      <div className="flex flex-1 justify-end">
+      {/* <div className="flex flex-1 justify-end">
         <button
           type="button"
           className="-m-3 p-3 focus-visible:outline-offset-[-4px]"
         ></button>
-      </div>
+      </div> */}
     </div>
   );
 }

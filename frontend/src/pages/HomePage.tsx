@@ -6,6 +6,11 @@ import MiniSection from "../app/components/section/MiniSection";
 import CTASection from "../app/components/section/CTASection";
 import TemplateSection from "../app/components/section/TemplateSection";
 import StepsSection from "../app/components/section/StepsSection";
+import Image from "next/image";
+// import main from "../app/assests/pexels-googledeepmind-17483868.jpg";
+// import main from "../app/assests/pexels-googledeepmind-17483873.jpg"
+import main from "../app/assests/pexels-vlada-karpovich-4050287.jpg"
+// import main from "../app/assests/ats.jpg"
 
 export default function HomePage() {
   const router = useRouter();
@@ -15,33 +20,36 @@ export default function HomePage() {
   };
 
   return (
-    <div className="bg-white">
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+    <div>
+      {/* <Image src={main} alt="" className="absolute h-full lg:h-max object-fill" /> */}
+      <div className="relative isolate px-6 pt-8 lg:px-8">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         ></div>
-        <div className="mx-auto max-w-4xl py-20 sm:py-48 lg:pt-32 lg:pb-2">
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1  text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Announcing our next round of funding.
-              <a href="#" className="font-semibold text-indigo-600">
+        <div className="mx-auto max-w-7xl py-20 sm:py-48 lg:pt-32 lg:pb-2">
+          <div className="hidden sm:mb-8 sm:flex sm:justify-center ">
+            <div className="relative rounded-full   flex justify-center items-center px-3 py-1  text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              <p>Big News! We’re Expanding! </p>
+              <a href="#" className="font-semibold px-2 text-indigo-600">
                 <span aria-hidden="true" className="absolute inset-0" />
                 Read more <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </div>
-          <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-balance text-gray-900 md:text-7xl">
-              AI Resume Builder (Fast, Easy & Free to Use)
+          <div className="text-center ">
+            <h1 className="text-4xl font-bold tracking-tight md:text-8xl bg-gradient-to-t from-black/80 to-gray-400 bg-clip-text text-transparent">
+              AI-Powered Resume Builder – Get Noticed Instantly!
             </h1>
-            <p className="mt-8 text-md font-medium md:text-lg text-pretty text-gray-500 ">
-              Land your next job with one of the best AI resume builders online.
-              Work from your computer or phone with dozens of recruiter-approved
-              templates and add ready-to-use skills and phrases in one click.
-              Millions have trusted our resume maker — and it’s free to use!
+
+            <p className="mt-8 text-md font-semibold md:text-lg lg:text-pretty text-evenly text-black/80  /60 p-4 rounded-2xl  ">
+              Build a professional resume effortlessly with AI-driven
+              suggestions, expert templates, and one-click customizations. Apply
+              faster and smarter with AI-generated resumes, cover letters, and
+              tailored job applications. Stand out to recruiters in just a few
+              clicks—completely free! 🎯
             </p>
-            <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-5">
+            <div className="mt-10  flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-5">
               <CustomButton
                 name={"Create my Resume"}
                 containerClass="master"

@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import Footer from "@/app/components/Footer";
 import MasterNavbar from "@/app/components/navbar/MasterNavbar";
 import React, { useEffect, useState } from "react";
 
-const MasterPage = ({children}) => {
+const MasterPage = ({ children }) => {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -15,10 +15,12 @@ const MasterPage = ({children}) => {
       console.log("not there");
     }
   }, []);
+
   return (
     <>
       <MasterNavbar userLoggedIn={userLoggedIn} />
-      <div>{children}</div>
+
+      {children}
       <Footer />
     </>
   );

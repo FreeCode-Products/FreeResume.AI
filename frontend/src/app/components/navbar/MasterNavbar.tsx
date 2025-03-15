@@ -1,5 +1,5 @@
 "use client";
-import React, {  useState } from "react";
+import React, { useState ,useEffect} from "react";
 import Image from "next/image";
 import logo from "../../assests/Yellow and Green Modern Logo (1).jpg";
 import CustomButton from "../CustomButton";
@@ -10,15 +10,38 @@ import {
   AvatarImage,
 } from "../../../components/ui/avatar";
 import { Navbar } from "./Navbar";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import dynamic from 'next/dynamic'
+
+const SHEET_SIDES = ["left"] as const;
+
+type SheetSide = (typeof SHEET_SIDES)[number];
 
 interface NavbarPropType {
   userLoggedIn: boolean;
 }
 
 const MasterNavbar = ({ userLoggedIn }: NavbarPropType) => {
-  const [,setMobileMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  const [, setMobileMenuOpen] = useState(false);
   const router = useRouter();
 
+  useEffect(() => {
+    setIsClient(true); // Ensure hydration consistency
+  }, []);
 
   const handleAuthentication = () => {
     router.push("/auth/GoogleAuth");
@@ -26,40 +49,71 @@ const MasterNavbar = ({ userLoggedIn }: NavbarPropType) => {
 
   return (
     <div>
-      <header className="absolute inset-x-0 top-0 z-50">
+      <header className="fixed inset-x-0 top-0 z-50 bg-white/70  ">
         <nav
           aria-label="Global"
-          className="flex items-center justify-between p-2 lg:px-8"
+          className="flex items-center justify-between lg:px-8"
         >
-          <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+          <div className="flex lg:flex-1 p-4">
+              <span className="sr-only">Free Resume.AI</span>
               <Image
                 alt=""
                 src={logo}
-                className="h-20 w-40 object-cover rounded-xl"
+                className=" h-12  w-28 md:h-16 md:w-44  object-cover rounded-xl"
                 onClick={() => {
                   router.push("/");
                   console.log("sdovbsdkjvbd");
                 }}
               />
-            </a>
           </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            >
-              <span className="sr-only">Open main menu</span>
-            </button>
+          <div className="flex lg:hidden ">
+            <div className="grid grid-cols-2 lg:hidden">
+              <Sheet>
+                <SheetTrigger>
+                  <Button variant="outline">
+                    <Menu />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side={"top"}>
+                  <SheetHeader>
+                    <SheetTitle>
+                      <div className="flex lg:hidden flex-1 ">
+                        { isClient &&  userLoggedIn ? (
+                          <Avatar>
+                            <AvatarImage src="https://github.com/shadcn.png" />
+                            <AvatarFallback>Hi!</AvatarFallback>
+                          </Avatar>
+                        ) : (
+                          <CustomButton
+                            name="Get Started"
+                            containerClass="default"
+                            onClick={handleAuthentication}
+                          />
+                        )}
+                      </div>
+                    </SheetTitle>
+                    <SheetDescription className="py-4">
+                      Welcome to FreeResume.AI
+                    </SheetDescription>
+                  </SheetHeader>
+
+                  <div className="w-full py-5  flex  justify-center ">
+                    <Navbar />
+                  </div>
+                  <SheetFooter className="fixed bottom-0 px-4  ">
+                    <p className="text-[10px] pr-16 py-2">
+                      Crafted by FreeCode Software Solutions.{" "}
+                    </p>
+                  </SheetFooter>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            <Navbar/>
-            {/* <Navbar navigation={navigation} /> */}
+            <Navbar />
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            {userLoggedIn ? (
+            {isClient && userLoggedIn ? (
               <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback>Hi!</AvatarFallback>
@@ -78,4 +132,5 @@ const MasterNavbar = ({ userLoggedIn }: NavbarPropType) => {
   );
 };
 
-export default MasterNavbar;
+
+export default dynamic (() => Promise.resolve(MasterNavbar), {ssr: false})

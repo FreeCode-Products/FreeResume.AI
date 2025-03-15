@@ -106,7 +106,7 @@
 
 //       {/* Resume Preview */}
 //       <div
-//         className="border rounded-lg shadow-lg p-6 bg-white"
+//         className="border rounded-lg shadow-lg p-6 "
 //         style={{
 //           borderColor: primaryColor,
 //           // width: "21cm", // A4 width in centimeters

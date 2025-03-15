@@ -7,7 +7,7 @@ const ResumeBuilder = () => {
       <ResumeTemplate />
 
       <div className="bg-gray-100 min-h-screen flex justify-center p-6">
-        <div className="max-w-3xl w-full bg-white p-6 shadow-md rounded-lg">
+        <div className="max-w-3xl w-full  p-6 shadow-md rounded-lg">
           <header className="text-center border-b pb-4">
             <h1 className="text-2xl font-bold text-red-900">
               ARVIND KUMAR S.D
