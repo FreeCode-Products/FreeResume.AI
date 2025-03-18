@@ -20,7 +20,7 @@ export default function TemplateSection() {
           </h2>
           <p className="mt-2 text-md text-gray-600">
             Select from a variety of modern, recruiter-approved resume templates
-            designed to highlight your skills and experience. Whether you're a
+            designed to highlight your skills and experience. Whether you&apos;re a
             recent graduate or a seasoned professional, find the perfect
             template to make your resume stand out..
           </p>

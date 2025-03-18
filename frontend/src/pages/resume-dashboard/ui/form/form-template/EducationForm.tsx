@@ -134,8 +134,8 @@ const EducationForm = () => {
                       {Array.from(
                         { length: new Date().getFullYear() - 1990 + 1 },
                         (_, i) => 1990 + i
-                      ).map((itm) => (
-                        <SelectItem value={String(itm)}>{itm}</SelectItem>
+                      ).map((itm,index) => (
+                        <SelectItem value={String(itm)} key={index}>{itm}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -157,8 +157,8 @@ const EducationForm = () => {
                       {Array.from(
                         { length: new Date().getFullYear() - 1990 + 1 },
                         (_, i) => 1990 + i
-                      ).map((itm) => (
-                        <SelectItem value={String(itm)}>{itm}</SelectItem>
+                      ).map((itm,index) => (
+                        <SelectItem value={String(itm)} key={index}>{itm}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
