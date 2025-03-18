@@ -44,9 +44,7 @@ const CustomSection = () => {
     console.log(values); // Handle form submission
   }
 
-  function handleKeyDown(
-    event: React.KeyboardEvent<HTMLTextAreaElement>
-  ): void {
+  function handleKeyDown( ): void {
     throw new Error("Function not implemented.");
   }
 
@@ -60,8 +58,8 @@ const CustomSection = () => {
         <AccordionItem value="item-1">
           <AccordionTrigger className="flex flex-col justify-start items-start p-2 ">
             <p className="text-xl font-bold">Activities</p>
-            <p className="text-sm ">
-              Show that you're a well-rounded individual! This highlights your
+            <p className="text-sm">
+              Show that you&apos;re a well-rounded individual! This highlights your
               ability to balance different aspects of your life.
             </p>
           </AccordionTrigger>

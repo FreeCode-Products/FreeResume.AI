@@ -65,7 +65,7 @@ const ExperienceForm = () => {
   }) {
     console.log(values); // Handle form submission
   }
-  const [text, setText] = useState("• "); // Start with a bullet
+  const [, setText] = useState("• "); // Start with a bullet
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === "Enter") {
@@ -74,9 +74,9 @@ const ExperienceForm = () => {
     }
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(event.target.value);
-  };
+  // const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  //   setText(event.target.value);
+  // };
 
   return (
     <Form {...form}>
@@ -149,8 +149,8 @@ const ExperienceForm = () => {
                       {Array.from(
                         { length: new Date().getFullYear() - 1990 + 1 },
                         (_, i) => 1990 + i
-                      ).map((itm) => (
-                        <SelectItem value={String(itm)}>{itm}</SelectItem>
+                      ).map((itm,index) => (
+                        <SelectItem value={String(itm)} key={index}>{itm}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -175,8 +175,8 @@ const ExperienceForm = () => {
                       {Array.from(
                         { length: new Date().getFullYear() - 1990 + 1 },
                         (_, i) => 1990 + i
-                      ).map((itm) => (
-                        <SelectItem value={String(itm)}>{itm}</SelectItem>
+                      ).map((itm,index) => (
+                        <SelectItem value={String(itm)} key={index}>{itm}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>

@@ -6,10 +6,8 @@ import MiniSection from "../app/components/section/MiniSection";
 import CTASection from "../app/components/section/CTASection";
 import TemplateSection from "../app/components/section/TemplateSection";
 import StepsSection from "../app/components/section/StepsSection";
-import Image from "next/image";
 // import main from "../app/assests/pexels-googledeepmind-17483868.jpg";
 // import main from "../app/assests/pexels-googledeepmind-17483873.jpg"
-import main from "../app/assests/pexels-vlada-karpovich-4050287.jpg"
 // import main from "../app/assests/ats.jpg"
 
 export default function HomePage() {

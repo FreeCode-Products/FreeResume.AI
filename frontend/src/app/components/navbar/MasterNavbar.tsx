@@ -11,11 +11,9 @@ import {
 } from "../../../components/ui/avatar";
 import { Navbar } from "./Navbar";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
   SheetFooter,
@@ -26,9 +24,7 @@ import {
 import { Menu } from "lucide-react";
 import dynamic from 'next/dynamic'
 
-const SHEET_SIDES = ["left"] as const;
 
-type SheetSide = (typeof SHEET_SIDES)[number];
 
 interface NavbarPropType {
   userLoggedIn: boolean;
@@ -36,7 +32,6 @@ interface NavbarPropType {
 
 const MasterNavbar = ({ userLoggedIn }: NavbarPropType) => {
   const [isClient, setIsClient] = useState(false);
-  const [, setMobileMenuOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {

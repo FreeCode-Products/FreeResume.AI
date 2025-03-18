@@ -31,7 +31,7 @@ const  SkillsForm =() => {
   function onSubmit(values: { Tech_Skills: string }) {
     console.log(values); // Handle form submission
   }
-  const [text, setText] = useState("• "); // Start with a bullet
+  const [, setText] = useState("• "); // Start with a bullet
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === "Enter") {
@@ -40,9 +40,9 @@ const  SkillsForm =() => {
     }
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(event.target.value);
-  };
+  // const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  //   setText(event.target.value);
+  // };
 
   return (
     <Form {...form}>
